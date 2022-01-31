@@ -11529,7 +11529,7 @@
     function Ga(e) {
       return Na(Ha, e);
     }
-    var Ba = "abcdefghijklmnoprstuvyzçşığöü",
+    var Ba = "abcçdeəfgğhxıijkqlmnoöprsştuüvyz",
       Fa = [].concat(g(Ba.split("").slice(13)), g(Ba.split("").slice(0, 13)));
     function Wa(e) {
       for (var a = "", s = 0; s < e.length; s++) {
@@ -11897,6 +11897,7 @@
                 }
                 this.$game.addEventListener("game-key-press", function (a) {
                   var s = a.detail.key;
+                  console.log(Ba);
                   "←" === s || "Backspace" === s
                     ? e.removeLetter()
                     : "↵" === s || "Enter" === s
@@ -12074,7 +12075,7 @@
     var ls = document.createElement("template");
     ls.innerHTML = '\n  <div class="spacer"></div>\n';
     var ds = [
-        ["q", "ü", "e", "r", "t", "y", "u", "ı", "o", "p", "ö", "ğ"],
+        ["q", "ü", "e", "r", "t", "y", "u", "i", "o", "p", "ö", "ğ"],
         ["-", "a", "s", "d", "f", "g", "h", "j", "k", "l", "ı", "ə", "-"],
         ["↵", "z", "x", "c", "v", "b", "n", "m", "ç", "ş", "←"],
       ],
@@ -12702,7 +12703,7 @@
     customElements.define("game-switch", $s);
     var Ps = document.createElement("template");
     Ps.innerHTML =
-      '\n  <style>\n  .instructions {\n    font-size: 14px;\n    color: var(--color-tone-1)\n  }\n\n  .examples {\n    border-bottom: 1px solid var(--color-tone-4);\n    border-top: 1px solid var(--color-tone-4);\n  }\n\n  .example {\n    margin-top: 24px;\n    margin-bottom: 24px;\n  }\n\n  game-tile {\n    width: 40px;\n    height: 40px;\n  }\n\n  :host([page]) section {\n    padding: 16px;\n    padding-top: 0px;\n  }\n\n  </style>\n  <section>\n    <div class="instructions">\n      <p><strong>WORDLE</strong>\'i 6 denemede bulun.</p>\n      <p>Her tahmin 5 harfli doğru bir kelime olmalıdır. Göndermek için enter\'a basın.</p>\n      <p>Her tahminden sonra kutucukların renkleri tahmininizin yakınlığına göre değişecektir.</p>\n      <div class="examples">\n        <p><strong>Örnekler</strong></p>\n        <div class="example">\n          <div class="row">\n            <game-tile letter="s" evaluation="correct" reveal></game-tile>\n            <game-tile letter="a"></game-tile>\n            <game-tile letter="h"></game-tile>\n            <game-tile letter="i"></game-tile>\n            <game-tile letter="l"></game-tile>\n          </div>\n          <p> <strong>S</strong> hərfi sözdə var və doğru yerdədir.</p>\n        </div>\n        <div class="example">\n          <div class="row">\n            <game-tile letter="g"></game-tile>\n            <game-tile letter="İ" evaluation="present" reveal></game-tile>\n            <game-tile letter="z"></game-tile>\n            <game-tile letter="e"></game-tile>\n            <game-tile letter="m"></game-tile>\n          </div>\n          <p><strong>İ</strong> harfi kelimede var fakat yanlış yerde.</p>\n        </div>\n        <div class="example">\n          <div class="row">\n            <game-tile letter="f"></game-tile>\n            <game-tile letter="a"></game-tile>\n            <game-tile letter="l"></game-tile>\n            <game-tile letter="e"></game-tile>\n            <game-tile letter="z" evaluation="absent" reveal></game-tile>\n          </div>\n          <p><strong>Z</strong> harfi kelimede yok.</p>\n        </div>\n      </div>\n      <p><strong>Her gün yeni bir WORDLE gelir!<strong></p>\n    </div>\n  </section>\n';
+      '\n  <style>\n  .instructions {\n    font-size: 14px;\n    color: var(--color-tone-1)\n  }\n\n  .examples {\n    border-bottom: 1px solid var(--color-tone-4);\n    border-top: 1px solid var(--color-tone-4);\n  }\n\n  .example {\n    margin-top: 24px;\n    margin-bottom: 24px;\n  }\n\n  game-tile {\n    width: 40px;\n    height: 40px;\n  }\n\n  :host([page]) section {\n    padding: 16px;\n    padding-top: 0px;\n  }\n\n  </style>\n  <section>\n    <div class="instructions">\n      <p><strong>WORDLE</strong>\'i 6 yoxlamada tapın.</p>\n      <p>Her tahmin 5 harfli doğru bir kelime olmalıdır. Göndermek için enter\'a basın.</p>\n      <p>Her tahminden sonra kutucukların renkleri tahmininizin yakınlığına göre değişecektir.</p>\n      <div class="examples">\n        <p><strong>Örnekler</strong></p>\n        <div class="example">\n          <div class="row">\n            <game-tile letter="s" evaluation="correct" reveal></game-tile>\n            <game-tile letter="a"></game-tile>\n            <game-tile letter="h"></game-tile>\n            <game-tile letter="i"></game-tile>\n            <game-tile letter="l"></game-tile>\n          </div>\n          <p> <strong>S</strong> hərfi sözdə var və doğru yerdədir.</p>\n        </div>\n        <div class="example">\n          <div class="row">\n            <game-tile letter="g"></game-tile>\n            <game-tile letter="İ" evaluation="present" reveal></game-tile>\n            <game-tile letter="z"></game-tile>\n            <game-tile letter="e"></game-tile>\n            <game-tile letter="m"></game-tile>\n          </div>\n          <p><strong>İ</strong> harfi kelimede var fakat yanlış yerde.</p>\n        </div>\n        <div class="example">\n          <div class="row">\n            <game-tile letter="f"></game-tile>\n            <game-tile letter="a"></game-tile>\n            <game-tile letter="l"></game-tile>\n            <game-tile letter="e"></game-tile>\n            <game-tile letter="z" evaluation="absent" reveal></game-tile>\n          </div>\n          <p><strong>Z</strong> harfi kelimede yok.</p>\n        </div>\n      </div>\n      <p><strong>Her gün yeni bir WORDLE gelir!<strong></p>\n    </div>\n  </section>\n';
     var Hs = (function (e) {
       r(t, e);
       var a = h(t);
